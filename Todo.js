@@ -1,16 +1,14 @@
 document.addEventListener('DOMContentLoaded', (event) => {
     let today = new Date().toISOString().split('T')[0];
-    document.getElementById('datePicker').setAttribute('min', today);
+    document.querySelector('.input_type_date').setAttribute('min', today);
 });
 
 let maintainTask = JSON.parse(localStorage.getItem('task')) || [];
 
+show();
 function addList() {
-    let taskInput = document.querySelector('.input_type_text');
-    let dateInput = document.querySelector('.input_type_date');
-    
-    let taskget = taskInput.value;
-    let dateget = dateInput.value;
+    let taskget = document.querySelector('.input_type_text').value;
+    let dateget = document.querySelector('.input_type_date').value;
 
     maintainTask.push({
         task: taskget,
@@ -19,9 +17,28 @@ function addList() {
 
     localStorage.setItem('task', JSON.stringify(maintainTask));
 
-    // Reset the input fields
-    taskInput.value = '';
-    dateInput.value = '';
-
-    console.log(maintainTask);
+    document.querySelector('.input_type_text').value = '';
+    document.querySelector('.input_type_date').value = '';
+ console.log(maintainTask);
+    show(); 
 }
+
+function show() {
+    let combine = '';
+    maintainTask.forEach((tasks, index) => {
+        let html = `
+            <div class="task-row">
+                <div class="task-name">${tasks.task}</div>
+                <div class="task-date">${tasks.date}</div>
+                <div class="task-actions">
+                    <button ><img src="edit.png" alt="Edit" style="width: 20px; height: 20px;"></button>
+                    <button><img src="accept.png" alt="Accept" style="width: 20px; height: 20px;"></button>
+                </div>
+            </div>`;
+        combine += html;
+    });
+    document.querySelector('.tasks').innerHTML = combine;
+}
+
+
+
