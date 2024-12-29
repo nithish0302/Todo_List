@@ -5,6 +5,8 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
 let maintainTask = JSON.parse(localStorage.getItem('task')) || [];
 
+let completedTask = [];
+
 show();
 function addList() {
     let taskget = document.querySelector('.input_type_text').value;
@@ -19,8 +21,8 @@ function addList() {
 
     document.querySelector('.input_type_text').value = '';
     document.querySelector('.input_type_date').value = '';
- console.log(maintainTask);
-    show(); 
+    console.log(maintainTask);
+    show();
 }
 
 function show() {
@@ -32,13 +34,16 @@ function show() {
                 <div class="task-date">${tasks.date}</div>
                 <div class="task-actions">
                     <button ><img src="edit.png" alt="Edit" style="width: 20px; height: 20px;"></button>
-                    <button><img src="accept.png" alt="Accept" style="width: 20px; height: 20px;"></button>
+                    <button onclick=" complete(index)"><img src="accept.png" alt="Accept" style="width: 20px; height: 20px;"></button>
                 </div>
             </div>`;
+            
         combine += html;
     });
     document.querySelector('.tasks').innerHTML = combine;
 }
+
+
 
 
 
