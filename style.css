@@ -1,0 +1,93 @@
+body {
+    background-color: black;
+}
+
+p {
+    margin: 0;
+}
+
+.Main {
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 350;
+    color: aliceblue;
+}
+
+.header {
+    display: flex;
+    justify-content: center;
+}
+
+.header_button {
+    font-family: 'Afacad Flux', sans-serif;
+    font-size: 23px;
+    margin: 30px;
+    border: none;
+    border-radius: 5px;
+    background-color: #1290EA;
+    color: #FFFF;
+    padding: 2px 8px;
+}
+
+.input_type {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    align-items: center;
+    justify-items: center;
+    margin-top: 30px;
+}
+
+.input_type_text {
+    height: 30px;
+    width: 165px;
+    vertical-align: top;
+    margin-right: 5px;
+    margin-bottom: 20px;
+    border: 2px solid #DADEEA;
+    border-radius: 5px;
+    outline: none;
+    background: #ffffff;
+    padding: 5px 20px;
+}
+
+.input_type_text::placeholder {
+    color: #888888;
+    padding-left: 50px;
+}
+
+.input_type_date {
+    height: 30px;
+    width: 130px;
+    vertical-align: top;
+    margin-right: 5px;
+    margin-bottom: 20px;
+    border: 2px solid #DADEEA;
+    border-radius: 5px;
+    outline: none;
+    padding: 5px 10px;
+    color: #414D64;
+    background: #ffffff;
+    text-align: center;
+}
+
+.input_type_add {
+    height: 40px;
+    width: 130px;
+    margin: 10px 5px 20px 10px;
+  
+    border: 2px solid #DADEEA;
+    border-radius: 5px;
+    outline: none;
+    padding: 5px 10px;
+    color: #414D64;
+    background: #ffffff;
+    text-align: center;
+    align-self: center;
+}
+
+.show_the_task {
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 350;
+    color: aliceblue;
+}

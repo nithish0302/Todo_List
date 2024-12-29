@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Afacad+Flux:wght@100..1000&family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+    </style>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+    <h1 class="Main">TodoList</h1>
+
+    <!-- header Box to acess the to list the task and completed and yet to complete task -->
+    <div class="header">
+        <div>
+            <button class="header_button">Today Task</button>
+        </div>
+        <div>
+            <button class="header_button">Completed</button>
+        </div>
+        <div>
+            <button class="header_button">Yet To Complete</button>
+
+        </div>
+    </div>
+
+    <!-- To add the task in the list -->
+    <div class="input_type">
+        <div>
+            <input type="text" placeholder="Enter the task" class="input_type_text">
+
+            <input type="date" class="input_type_date" placeholder="Select Date" id="datePicker">
+           
+
+        </div>
+        <div>
+            <button class="input_type_add" onclick="addList()">Add To Task</button>
+        </div>
+    </div>
+
+
+    <!-- To Show the yet to complete and to task -->
+    <div>
+        <h3 class="show_the_task">Today Task</h3>
+    </div>
+
+    <script src="Todo.js"></script>
+</body>
+
+</html>
