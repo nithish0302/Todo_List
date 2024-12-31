@@ -1,6 +1,5 @@
 body {
-    background-color: black;
-    color: white;
+    background-color: rgb(11, 10, 7);
 }
 
 p {
@@ -23,7 +22,7 @@ p {
     font-family: 'Afacad Flux', sans-serif;
     font-size: 23px;
     margin: 30px;
-    border: none;
+    border: 1px solid #ddd;
     border-radius: 5px;
     background-color: #1290EA;
     color: #FFFF;
@@ -44,7 +43,7 @@ p {
     vertical-align: top;
     margin-right: 5px;
     margin-bottom: 20px;
-    border: 2px solid #DADEEA;
+    border: 1px solid #ddd;
     border-radius: 5px;
     outline: none;
     background: #ffffff;
@@ -63,7 +62,7 @@ p {
     vertical-align: top;
     margin-right: 5px;
     margin-bottom: 20px;
-    border: 2px solid #DADEEA;
+    border: 1px solid #ddd;
     border-radius: 5px;
     outline: none;
     padding: 5px 10px;
@@ -81,8 +80,8 @@ p {
     border-radius: 5px;
     outline: none;
     padding: 5px 10px;
-    color: #414D64;
-    background: #ffffff;
+    color: #ddd;
+    background: #1290EA;
     text-align: center;
     align-self: center;
 }
@@ -105,11 +104,15 @@ p {
 .task-name {
     flex: 1;
     text-align: calc(20);
+    color: aliceblue;
 }
 
 .task-date {
     flex: 1;
     text-align: center;
+    color: #DDDBF1;
+    color: #E1DEE3;
+
 }
 
 .task-actions {
@@ -150,7 +153,7 @@ p {
 
 .popup-content {
     position: relative;
-    background-color: white;
+    background-color: #725D68;
     padding: 20px;
     border-radius: 10px;
     width: 300px;
@@ -182,7 +185,7 @@ button.save-edit {
     margin-top: 10px;
     width: 100%;
     padding: 10px;
-    background-color: #4CAF50;
+    background-color: #1290EA;
     color: white;
     border: none;
     border-radius: 5px;

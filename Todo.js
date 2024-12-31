@@ -52,7 +52,7 @@ function show() {
             dateObj.getFullYear();
         let html = `
             <div class="task-row">
-                <div class="task-name">${tasks.task}</div>
+                <div class="task-name"><h4>${tasks.task}</h4></div>
                 <div class="task-date">${formattedDate}</div>
                 <div class="task-actions">
                     <button onclick="edit(${index})"><img src="edit.png" alt="Edit" style="width: 20px; height: 20px;"></button>
@@ -65,6 +65,7 @@ function show() {
     });
     document.querySelector('.tasks').innerHTML = combine;
 }
+
 
 function complete(index) {
     const remove = maintainTask.splice(index, 1);
@@ -87,10 +88,14 @@ function edit(index) {
     document.querySelector('.edit-popup').style.display = 'grid';
 
 }
+document.addEventListener('DOMContentLoaded', () => {
+    document.querySelector('.close-popup').addEventListener('click', () => {
+        document.querySelector('.edit-popup').style.display = 'none';
+    });
+});
 
-function close() {
-    document.querySelector('.popup').style.display = 'none';
-}
+
+
 
 
 
