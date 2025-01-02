@@ -1,0 +1,47 @@
+body {
+    background-color: rgb(11, 10, 7);
+    margin-top: 50px;
+}
+
+p {
+    margin: 0;
+
+}
+
+.task-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-bottom: 1px solid #ddd;
+    margin-left: 30px;
+    margin-right: 30px;
+}
+
+.task-name {
+    flex: 1;
+    text-align: center;
+    color: aliceblue;
+    font-size: 24px;
+    margin-bottom: 0;
+    font-family: 'Montserrat', sans-serif;
+
+}
+
+.task-date {
+    flex: 1;
+    text-align: center;
+    color: #DDDBF1;
+    /* color: #E1DEE3; */
+    font-size: 21px;
+    font-family: 'Montserrat', sans-serif;
+
+
+}
+
+.task-actions {
+    flex: 1;
+    display: flex;
+    justify-content: space-around;
+
+}

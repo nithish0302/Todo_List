@@ -46,14 +46,14 @@ function show() {
             String(dateObj.getDate()).padStart(2, '0') + '/' +
             String(dateObj.getMonth() + 1).padStart(2, '0') + '/' +
             dateObj.getFullYear();
-        if (todayFormatted >= formattedDate) {
+        if (todayFormatted <= formattedDate) {
             let html = `
             <div class="task-row">
                 <div class="task-name">${tasks.task}</div>
                 <div class="task-date">${formattedDate}</div>
                 <div class="task-actions">
-                    <button onclick="edit(${index})"><img src="edit.png" alt="Edit" style="width: 23px; height: 23px;"></button>
-                    <button onclick="complete(${index})"><img src="accept.png" alt="Accept" style="width: 23px; height: 23px;"></button>
+                    <button onclick="edit(${index})"><img src="../IMAGES/edit.png" alt="Edit" style="width: 21px; height: 23px;"></button>
+                    <button onclick="complete(${index})"><img src="../IMAGES/accept.png" alt="Accept" style="width: 23px; height: 23px;"></button>
                 </div>
             </div>`;
             combine += html;
@@ -105,17 +105,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
 function missedtask() {
     let today = new Date();
-    let today_time = today.setHours(0, 0, 0, 0); 
+    let today_time = today.setHours(0, 0, 0, 0);
 
     maintainTask.sort((a, b) => new Date(a.date) - new Date(b.date));
 
     for (let i = maintainTask.length - 1; i >= 0; i--) {
-        let taskDate = new Date(maintainTask[i].date).setHours(0, 0, 0, 0); 
+        let taskDate = new Date(maintainTask[i].date).setHours(0, 0, 0, 0);
         if (taskDate < today_time) {
-            let removedTask = maintainTask.splice(i, 1)[0]; 
-            missedTask.push(removedTask); 
+            let removedTask = maintainTask.splice(i, 1)[0];
+            missedTask.push(removedTask);
         }
     }
 }
 missedtask();
-console.log(missedTask);
+// console.log(maintainTask);

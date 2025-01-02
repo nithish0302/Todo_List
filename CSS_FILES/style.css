@@ -72,18 +72,14 @@ p {
 }
 
 .input_type_add {
-    height: 40px;
-    width: 130px;
-    margin: 10px 5px 20px 10px;
-
-    border: 2px solid #DADEEA;
+    font-family: 'Afacad Flux', sans-serif;
+    font-size: 23px;
+    margin: 30px;
+    border: 0px solid #ddd;
     border-radius: 5px;
-    outline: none;
-    padding: 5px 10px;
-    color: #ddd;
-    background: #1290EA;
-    text-align: center;
-    align-self: center;
+    background-color: #1290EA;
+    color: #FFFF;
+    padding: 2px 8px;
 }
 
 .show_the_task {
@@ -91,6 +87,7 @@ p {
     font-family: 'Montserrat', sans-serif;
     font-weight: 350;
     color: aliceblue;
+    font-size: 28px;
 }
 
 .task-row {
@@ -99,6 +96,9 @@ p {
     justify-content: space-between;
     padding: 10px 0;
     border-bottom: 1px solid #ddd;
+    margin-left: 40px;
+    margin-right: 40px;
+    margin-top: 20px;
 }
 
 .task-name {
@@ -107,6 +107,8 @@ p {
     color: aliceblue;
     font-size: 24px;
     margin-bottom: 0;
+    font-family: 'Montserrat', sans-serif;
+
 }
 
 .task-date {
@@ -114,7 +116,9 @@ p {
     text-align: center;
     color: #DDDBF1;
     color: #E1DEE3;
-    font-size: 22px;
+    font-size: 21px;
+    font-family: 'Montserrat', sans-serif;
+
 
 }
 
