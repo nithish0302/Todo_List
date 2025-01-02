@@ -1,3 +1,8 @@
+// let completedTask = JSON.parse(localStorage.getItem('completed')) || [];
+// let missedTask = JSON.parse(localStorage.getItem('missed')) || [];
+// let maintainTask = JSON.parse(localStorage.getItem('task')) || [];
+
+
 function today_task() {
     let combine = '';
 
@@ -8,7 +13,6 @@ function today_task() {
         today.getFullYear();
     console.log("Today's date: " + todayFormatted);
 
-    let maintainTask = JSON.parse(localStorage.getItem('task')) || [];
 
     maintainTask.sort((a, b) => new Date(a.date) - new Date(b.date));
     maintainTask.forEach((tasks, index) => {
@@ -45,7 +49,7 @@ function complete(index) {
 
     localStorage.setItem('task', JSON.stringify(maintainTask));
     localStorage.setItem('completed', JSON.stringify(completedTask));
-    show();
+    today_task();
 }
 
 function edit(index) {
@@ -67,7 +71,7 @@ function edit(index) {
         maintainTask[index] = { task: taskName, date: taskDate };
         localStorage.setItem('task', JSON.stringify(maintainTask));
         document.querySelector('.edit-popup').style.display = 'none';
-        show();
+        today_task();
     };
 }
 

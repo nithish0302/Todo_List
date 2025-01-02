@@ -10,6 +10,17 @@
 
 <body>
     <div class="today_task"></div>
+    <!-- Popup For Editing -->
+    <div class="popup edit-popup">
+        <div class="popup-content">
+            <button class="close-popup"><img src="../IMAGES/cross.png" alt="" class="close-button"></button>
+            <h3>Edit Task</h3>
+            <input type="text" class="edit-task-name" placeholder="Enter the new Task Name">
+            <br>
+            <input type="text" class="edit-task-date" placeholder="Enter the new Task Date">
+            <button class="save-edit" onclick="save()">Save</button>
+        </div>
+    </div>
 
     <script src="../JS_FILES/Todo.js"></script>
 
