@@ -1,6 +1,6 @@
 let maintainTask = JSON.parse(localStorage.getItem('task')) || [];
 let completedTask = JSON.parse(localStorage.getItem('completed')) || [];
-
+let missedTask = JSON.parse(localStorage.getItem('missed')) || [];
 document.addEventListener('DOMContentLoaded', () => {
     let today = new Date().toISOString().split('T')[0];
     document.querySelector('.input_type_date').setAttribute('min', today);
@@ -32,6 +32,13 @@ function addList() {
 function show() {
     let combine = '';
 
+    let today = new Date();
+    let todayFormatted =
+        String(today.getDate()).padStart(2, '0') + '/' +
+        String(today.getMonth() + 1).padStart(2, '0') + '/' +
+        today.getFullYear();
+
+
     maintainTask.sort((a, b) => new Date(a.date) - new Date(b.date));
     maintainTask.forEach((tasks, index) => {
         let dateObj = new Date(tasks.date);
@@ -39,8 +46,8 @@ function show() {
             String(dateObj.getDate()).padStart(2, '0') + '/' +
             String(dateObj.getMonth() + 1).padStart(2, '0') + '/' +
             dateObj.getFullYear();
-
-        let html = `
+        if (todayFormatted >= formattedDate) {
+            let html = `
             <div class="task-row">
                 <div class="task-name">${tasks.task}</div>
                 <div class="task-date">${formattedDate}</div>
@@ -49,7 +56,8 @@ function show() {
                     <button onclick="complete(${index})"><img src="accept.png" alt="Accept" style="width: 23px; height: 23px;"></button>
                 </div>
             </div>`;
-        combine += html;
+            combine += html;
+        }
     });
 
     document.querySelector('.tasks').innerHTML = combine;
@@ -94,3 +102,20 @@ document.addEventListener('DOMContentLoaded', () => {
         document.querySelector('.edit-popup').style.display = 'none';
     });
 });
+
+function missedtask() {
+    let today = new Date();
+    let today_time = today.setHours(0, 0, 0, 0); 
+
+    maintainTask.sort((a, b) => new Date(a.date) - new Date(b.date));
+
+    for (let i = maintainTask.length - 1; i >= 0; i--) {
+        let taskDate = new Date(maintainTask[i].date).setHours(0, 0, 0, 0); 
+        if (taskDate < today_time) {
+            let removedTask = maintainTask.splice(i, 1)[0]; 
+            missedTask.push(removedTask); 
+        }
+    }
+}
+missedtask();
+console.log(missedTask);
