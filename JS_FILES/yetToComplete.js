@@ -1,35 +1,3 @@
-let maintainTask = JSON.parse(localStorage.getItem('task')) || [];
-let completedTask = JSON.parse(localStorage.getItem('completed')) || [];
-let missedTask = JSON.parse(localStorage.getItem('missed')) || [];
-document.addEventListener('DOMContentLoaded', () => {
-    let today = new Date().toISOString().split('T')[0];
-    document.querySelector('.input_type_date').setAttribute('min', today);
-    show();
-});
-show();
-
-function addList() {
-    let taskName = document.querySelector('.input_type_text').value.trim();
-    let taskDate = document.querySelector('.input_type_date').value;
-
-    if (!taskName) {
-        alert("Enter the Task Name");
-        return;
-    }
-
-    if (!taskDate) {
-        alert("Select the Date");
-        return;
-    }
-
-    maintainTask.push({ task: taskName, date: taskDate });
-    localStorage.setItem('task', JSON.stringify(maintainTask));
-
-    document.querySelector('.input_type_text').value = '';
-    document.querySelector('.input_type_date').value = '';
-    show();
-}
-
 function show() {
     let combine = '';
 
@@ -60,8 +28,8 @@ function show() {
             combine += html;
         }
     });
-    document.querySelector('.tasks').innerHTML = combine;
-    // document.querySelector('.yet_to_complete').innerHTML = combine;
+    // document.querySelector('.tasks').innerHTML = combine;
+    document.querySelector('.yet_to_complete').innerHTML = combine;
     console.log(combine);
 
 }
@@ -128,20 +96,4 @@ document.addEventListener('DOMContentLoaded', () => {
         document.querySelector('.edit-popup').style.display = 'none';
     });
 });
-
-function missedtask() {
-    let today = new Date();
-    let today_time = today.setHours(0, 0, 0, 0);
-
-    maintainTask.sort((a, b) => new Date(a.date) - new Date(b.date));
-
-    for (let i = maintainTask.length - 1; i >= 0; i--) {
-        let taskDate = new Date(maintainTask[i].date).setHours(0, 0, 0, 0);
-        if (taskDate < today_time) {
-            let removedTask = maintainTask.splice(i, 1)[0];
-            missedTask.push(removedTask);
-        }
-    }
-}
-missedtask();
-// console.log(maintainTask);
+show();
