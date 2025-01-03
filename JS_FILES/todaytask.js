@@ -1,6 +1,6 @@
 // let completedTask = JSON.parse(localStorage.getItem('completed')) || [];
 // let missedTask = JSON.parse(localStorage.getItem('missed')) || [];
-// let maintainTask = JSON.parse(localStorage.getItem('task')) || [];
+// let maintainTask = JSON.pa   rse(localStorage.getItem('task')) || [];
 
 
 function today_task() {

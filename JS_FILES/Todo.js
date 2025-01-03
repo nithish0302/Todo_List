@@ -77,25 +77,48 @@ function complete(index) {
 function edit(index) {
     let editTask = maintainTask[index];
     document.querySelector('.edit-task-name').value = editTask.task;
-    document.querySelector('.edit-task-date').value = editTask.date;
-    document.querySelector('.edit-popup').style.display = 'grid';
 
+    let dateObj = new Date(editTask.date);
+    let formattedDate =
+        dateObj.getFullYear() + '-' +
+        String(dateObj.getMonth() + 1).padStart(2, '0') + '-' +
+        String(dateObj.getDate()).padStart(2, '0');
+    document.querySelector('.edit-task-date').value = formattedDate;
+
+    document.querySelector('.edit-popup').style.display = 'grid';
 
     document.querySelector('.save-edit').onclick = function () {
         let taskName = document.querySelector('.edit-task-name').value.trim();
-        let taskDate = document.querySelector('.edit-task-date').value;
+        let taskDates = document.querySelector('.edit-task-date').value.trim();
 
-        if (!taskName || !taskDate) {
+        if (!taskName || !taskDates) {
             alert("Both Task Name and Date are required.");
             return;
         }
+        let taskDate = new Date(taskDates);
+        if (isNaN(taskDate.getTime())) {
+            alert("Invalid date format. Please select a valid date.");
+            return;
+        }
 
-        maintainTask[index] = { task: taskName, date: taskDate };
+        let formattedDate =
+            taskDate.getFullYear() + '/' +
+            String(taskDate.getMonth() + 1).padStart(2, '0') + '/' +
+            String(taskDate.getDate()).padStart(2, '0');
+
+        maintainTask[index] = { task: taskName, date: formattedDate };
         localStorage.setItem('task', JSON.stringify(maintainTask));
+
         document.querySelector('.edit-popup').style.display = 'none';
         show();
     };
 }
+
+document.querySelector('.close-popup').onclick = function () {
+    document.querySelector('.edit-popup').style.display = 'none';
+};
+
+
 
 document.addEventListener('DOMContentLoaded', () => {
     document.querySelector('.close-popup').addEventListener('click', () => {
