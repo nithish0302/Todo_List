@@ -18,7 +18,7 @@ function completeTask() {
                 <div class="task-date">${formattedDate}</div>
                 <div class="task-actions">
                     <button onclick="editCompleted(${index})">
-                        <img src="../IMAGES/edit.png" alt="Edit" style="width: 21px; height: 23px;">
+                        <img src="./IMAGES/edit.png" alt="Edit" style="width: 21px; height: 23px;">
                     </button>
                 </div>
             </div>`;

@@ -21,8 +21,8 @@ function show() {
                 <div class="task-name">${tasks.task}</div>
                 <div class="task-date">${formattedDate}</div>
                 <div class="task-actions">
-                    <button onclick="edit(${index})"><img src="../IMAGES/edit.png" alt="Edit" style="width: 21px; height: 23px;"></button>
-                    <button onclick="complete(${index})"><img src="../IMAGES/accept.png" alt="Accept" style="width: 23px; height: 23px;"></button>
+                    <button onclick="edit(${index})"><img src="./IMAGES/edit.png" alt="Edit" style="width: 21px; height: 23px;"></button>
+                    <button onclick="complete(${index})"><img src="./IMAGES/accept.png" alt="Accept" style="width: 23px; height: 23px;"></button>
                 </div>
             </div>`;
             combine += html;
